@@ -21,7 +21,7 @@ package body Google.Protobuf.Any is
       Init_Length : constant Positive := Positive'Max (1, 256 / Any'Size);
       Aux_Data    : Any_Array_Access;
    begin
-      if Self.Length = 0 then
+      if Self.Data = null then
          Self.Data :=  new Any_Array (1 .. Init_Length);
 
       elsif Self.Length = Self.Data'Last then

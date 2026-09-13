@@ -1007,7 +1007,7 @@ package body Compiler.Descriptors is
                    Is_Constant     => False)),
          Statements => F.New_List
            ((F.New_If
-             (Condition  => F.New_Selected_Name (+"Self.Length = 0"),
+             (Condition  => F.New_Selected_Name (+"Self.Data = null"),
               Then_Path  => F.New_Assignment
                 (F.New_Selected_Name (+"Self.Data"),
                  F.New_Infix

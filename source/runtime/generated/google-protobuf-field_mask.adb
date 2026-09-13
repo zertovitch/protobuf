@@ -22,7 +22,7 @@ package body Google.Protobuf.Field_Mask is
         Positive'Max (1, 256 / Field_Mask'Size);
       Aux_Data    : Field_Mask_Array_Access;
    begin
-      if Self.Length = 0 then
+      if Self.Data = null then
          Self.Data :=  new Field_Mask_Array (1 .. Init_Length);
 
       elsif Self.Length = Self.Data'Last then

@@ -52,7 +52,7 @@ package body Google.Protobuf.Struct is
       Init_Length : constant Positive := Positive'Max (1, 256 / Struct'Size);
       Aux_Data    : Struct_Array_Access;
    begin
-      if Self.Length = 0 then
+      if Self.Data = null then
          Self.Data :=  new Struct_Array (1 .. Init_Length);
 
       elsif Self.Length = Self.Data'Last then
@@ -157,7 +157,7 @@ package body Google.Protobuf.Struct is
         Positive'Max (1, 256 / Fields_Entry'Size);
       Aux_Data    : Fields_Entry_Array_Access;
    begin
-      if Self.Length = 0 then
+      if Self.Data = null then
          Self.Data :=  new Fields_Entry_Array (1 .. Init_Length);
 
       elsif Self.Length = Self.Data'Last then
@@ -267,7 +267,7 @@ package body Google.Protobuf.Struct is
       Init_Length : constant Positive := Positive'Max (1, 256 / Value'Size);
       Aux_Data    : Value_Array_Access;
    begin
-      if Self.Length = 0 then
+      if Self.Data = null then
          Self.Data :=  new Value_Array (1 .. Init_Length);
 
       elsif Self.Length = Self.Data'Last then
@@ -421,7 +421,7 @@ package body Google.Protobuf.Struct is
         Positive'Max (1, 256 / List_Value'Size);
       Aux_Data    : List_Value_Array_Access;
    begin
-      if Self.Length = 0 then
+      if Self.Data = null then
          Self.Data :=  new List_Value_Array (1 .. Init_Length);
 
       elsif Self.Length = Self.Data'Last then

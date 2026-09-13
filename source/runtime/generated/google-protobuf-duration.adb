@@ -21,7 +21,7 @@ package body Google.Protobuf.Duration is
       Init_Length : constant Positive := Positive'Max (1, 256 / Duration'Size);
       Aux_Data    : Duration_Array_Access;
    begin
-      if Self.Length = 0 then
+      if Self.Data = null then
          Self.Data :=  new Duration_Array (1 .. Init_Length);
 
       elsif Self.Length = Self.Data'Last then

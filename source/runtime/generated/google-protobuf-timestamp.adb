@@ -22,7 +22,7 @@ package body Google.Protobuf.Timestamp is
         Positive'Max (1, 256 / Timestamp'Size);
       Aux_Data    : Timestamp_Array_Access;
    begin
-      if Self.Length = 0 then
+      if Self.Data = null then
          Self.Data :=  new Timestamp_Array (1 .. Init_Length);
 
       elsif Self.Length = Self.Data'Last then
